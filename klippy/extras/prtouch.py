@@ -406,8 +406,7 @@ class PRTouchZOffsetWrapper:
             self.clear_nozzle(self.cfg.hot_min_temp, self.cfg.hot_max_temp, self.cfg.bed_max_temp,
                             self.cfg.min_hold, self.cfg.max_hold)
 
-        x = self.cfg.sensor_x + random.uniform(-self.cfg.random_offset, self.cfg.random_offset)
-        y = self.cfg.sensor_y + random.uniform(-self.cfg.random_offset, self.cfg.random_offset)
+
         probe_x_offset, probe_y_offset = self.obj.probe.get_offsets()[:2]
         probe_x = self.cfg.sensor_x - probe_x_offset
         probe_y = self.cfg.sensor_y - probe_y_offset
