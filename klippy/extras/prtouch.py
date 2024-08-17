@@ -293,7 +293,8 @@ class PRTouchZOffsetWrapper:
 
     def probe_z_offset(self):
         self._ck_g28ed()
-        z_offset = self._probe_times(3, [self.cfg.sensor_x, self.cfg.sensor_y, self.cfg.bed_max_err + 1.], self.cfg.g29_speed, 10, self.cfg.check_bed_mesh_max_err, self.cfg.min_hold, self.cfg.max_hold)        return z_offset
+        z_offset = self._probe_times(3, [self.cfg.sensor_x, self.cfg.sensor_y, self.cfg.bed_max_err + 1.], self.cfg.g29_speed, 10, self.cfg.check_bed_mesh_max_err, self.cfg.min_hold, self.cfg.max_hold)
+        return z_offset
 
     def _cal_min_z(self, start_z, hx711_vals):
         hx711_params, hx711_start_tick = self.obj.hx711s.get_params()
